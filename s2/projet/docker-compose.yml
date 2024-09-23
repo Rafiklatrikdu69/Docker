@@ -1,0 +1,11 @@
+services:
+  webapp:
+    build: ./webapp
+    ports:
+      - "3000:80"
+  database:
+    build: ./database
+    environment:
+      MYSQL_ROOT_PASSWORD: 'movie123'
+    ports:
+      - '3306:3306'
