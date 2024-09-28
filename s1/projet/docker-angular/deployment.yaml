@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: angularapp-deployment
+  labels:
+    app: angularapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: angularapp
+  template:
+    metadata:
+      labels:
+        app: angularapp
+    spec:
+      containers:
+      - name: angularserver
+        image: rafik1212/k8-angular:latest
+        ports:
+        - containerPort: 80
